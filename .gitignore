@@ -47,10 +47,13 @@ function leave(user) {
 //Function called on upon a new chat message.
 function readChat(data) { 
 
+	//Checks if a user tags your account in their message.
+    if (data.message.indexOf("@" + API.getSelf().username) > -1) {
 
+            var isChat = false; 
 
-		//Checks if the user stated '/time'
-        if (data.message.indexOf('/time') != -1) {
+		//Checks if the user stated 'what time is it'
+        if (data.message.indexOf('what time is it') != -1) {
 		
 			isChat = true;
 			
